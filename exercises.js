@@ -1,92 +1,46 @@
 // Question 1
-const isRealPalindrome = () => {
-
-};
-
-// Question 2
-const runningTotal = () => {
-
-};
-
-// Question 3
-const swap = () => {
-
-};
-
-// Question 4
-const wordSizes = () => {
-
-};
-
-// Question 5
-const union = () => {
-
-};
-
-// Question 6
-const firstRecurring = () => {
-
-};
-
-// Question 7
-const showMultiplicativeAverage = () => {
-
-};
-
-// Quetsion 8
-const multiplyList = () => {
-};
-
-// Question 9
-const sequence = () => {
-
-};
-
-// Question 10
 const isUpperCase = () => {
 
 };
 
-// Question 11
+// Question 2
 const removeVowels = () => {
 
 };
 
-// Question 12
+// Question 3
 const wordCap = () => {
 
 };
 
-// Question 13
+// Question 4
 const swapCase = () => {
 
 };
 
-// Question 14
+// Question 5
 const staggeredCase = () => {
 
 };
 
-// Question 15
+// Question 6
 const wordLengths = () => {
 
 };
 
-// The below code connects this JS file to our test file
+// Question 7
+const searchWord = () => {
+
+};
+
+
+// The code below ensures that this file can talk to our test file.
 module.exports = {
-  isRealPalindrome,
-  runningTotal,
-  swap,
-  wordSizes,
-  union,
-  firstRecurring,
-  showMultiplicativeAverage,
-  multiplyList,
-  sequence,
   isUpperCase,
   removeVowels,
   wordCap,
   swapCase,
   staggeredCase,
   wordLengths,
+  searchWord,
 };
