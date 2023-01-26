@@ -1,42 +1,54 @@
 // Question 1
-const isUpperCase = (str) => {
+const isUpperCase = str => {
   const upperStr = str.toUpperCase();
   return str == upperStr;
 };
 
 // Question 2
-const removeVowels = (arr) => {
-  return arr.map(el => el !== /[aeiou]/)
-};
+function removeVowels(arr) {
+  const vowels = /[aeiou]/ig;
+  return arr.map(el => el.replace(vowels,''));
+}
 
 // Question 3
-const wordCap = (str) => {
-  const results = [];
+const wordCap = str => {
+  let results = '';
   const strArr = str.split(' ');
-  for(let i = 0; i < str.length; i++) {
-    results.push(strArr[i][0].toUpperCase()+strArr[i].substring(1, strArr[i].length));
+  for (let i = 0; i < strArr.length; i++) {
+    if(i === strArr.length - 1) results += strArr[i].substring(0,1).toUpperCase() + strArr[i].substring(1, strArr[i].length);
+    else results += strArr[i].substring(0,1).toUpperCase() + strArr[i].substring(1, strArr[i].length).toLowerCase() + ' ';
   }
+  return results;
 };
 
 // Question 4
-const swapCase = (str) => {
+const swapCase = str => {
   let results = '';
-  for(let i = 0; i < str.length; i++) {
-    if(str[i] == str[i].toUpperCase()) results += str[i].toLowerCase();
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === str[i].toUpperCase()) results += str[i].toLowerCase();
     else results += str[i].toUpperCase();
   }
   return results;
 };
 
 // Question 5
-const staggeredCase = (str) => {
-  let stagStr = '';
-  let count = 0;
-  for(let i = 0; i < str.length; i++) {
-    if(count % 2 === 0) stagStr += str[i].toUpperCase();
-    else stagStr += str[i].toLowerCase();
+const staggeredCase = str => {
+  let flag = true;
+  let temp = "";
+  for(let i = 0; i<str.length; i++){
+    if(!Number(str[i]) && flag && str[i] != ' '){
+      temp += str[i].toUpperCase()
+    }
+    else if(Number(str[i]) || str[i] === ' '){
+      temp += str[i]
+      continue;
+    } 
+    else{
+      temp += str[i].toLowerCase()
+    }
+    flag = !flag
   }
-  return stagStr;
+  return temp
 };
 
 // Question 6
@@ -50,12 +62,8 @@ const wordLengths = (str) => {
 };
 
 // Question 7
-const searchWord = (str) => {
-  let obj = {};
-  const splitArr = str.split(' ')
-  for(let i = 0; i < arr.length; i++) {
-    
-  }
+const searchWord = (text, word) => {
+  return text.replace(/[.!?,]/ig, "").split(" ").filter(w => w.toLowerCase() === word.toLowerCase()).length;
 };
 
 
